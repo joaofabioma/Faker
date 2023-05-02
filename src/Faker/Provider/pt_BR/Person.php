@@ -114,6 +114,52 @@ class Person extends \Faker\Provider\Person
 
     protected static $suffix = ['Filho', 'Neto', 'Sobrinho', 'Jr.'];
 
+    protected static $emissorRgAbbr = [
+        'ABNC', 'DPF', 'DUREX', 'CGPI', 'CGPI', 'CGPMAF', 'CNIG', 'CNT', 'COREN', 'CORECON',
+        'CRA', 'CRAS', 'CRB', 'CRC', 'CRE', 'CREA', 'CRECI', 'CREFIT', 'CRESS', 'CRF', 'CRM',
+        'CRN', 'CRO', 'CRP', 'CRPRE', 'CRQ', 'CRRC', 'CRMV', 'CSC', 'DIC', 'DIREX', 'DPMAF',
+        'DPT', 'DST', 'FGTS', 'FIPE', 'FLS', 'GOVGO', 'I CLA', 'IFP', 'IGP', 'IIMG', 'IML',
+        'IPC', 'IPF', 'MAE', 'MEX', 'MMA', 'MTE', 'OAB', 'OMB', 'PCMG', 'PMMG', 'POF', 'POM',
+        'SDS', 'SNJ', 'SECC', 'SEJUSP', 'EST', 'SES', 'SESP', 'SJS', 'SJTC', 'SJTS', 'SPTC',
+        'SSP', 'Detran',
+    ];
+
+    protected static $corRaca = [
+        'Branca', 'Preta', 'Parda', 'Amarela', 'Indigena', 'Sem Declaração'
+    ];
+
+    protected static $emissorRg = [
+        'Academia Brasileira de Neurocirurgia', 'Coordenação Geral de Polícia de Imigração da Polícia Federal', 
+        'Coordenação Geral de Polícia de Imigração da Polícia Federal', 'Coordenação-Geral de Privilégios e Imunidades',
+        'Coordenadoria Geral de Polícia Marítima, Aeronáutica e de Fronteiras', 'Conselho Nacional de Imigração',
+        'Confederação Nacional de Transporte', 'Conselho Regional de Enfermagem', 'Conselho Regional de Economia',
+        'Conselho Regional de Administração', 'Centro de Referência de Assistência Social', 'Conselho Regional de Biblioteconomia',
+        'Conselho Regional de Contabilidade', 'Conselho Regional de Estatística', 'Conselho Regional de Engenharia e Agronomia',
+        'Conselho Regional de Corretores de Imóveis', 'Conselho Regional de Fisioterapia e Terapia Ocupacional',
+        'Conselho Regional de Serviço Social', 'Conselho Regional de Farmácia', 'Conselho Regional de Medicina', 'Conselho Regional de Nutrição',
+        'Conselho Regional de Odontologia', 'Conselho Regional de Psicologia', 'Conselho Regional de Profissionais de Relações Públicas',
+        'Conselho Regional de Química', 'Conselho Regional de Representantes Comerciais', 'Conselho Regional de Medicina Veterinária',
+        'Carteira Sede Carpina de Pernambuco', 'Diretoria de Identificação Civil', 'Diretoria-Executiva',
+        'Divisão de Polícia Marítima, Área e de Fronteiras', 'Departamento de Polícia Técnica Geral', 'Programa Municipal DST/Aids',
+        'Fundo de Garantia do Tempo de Serviço', 'Fundação Instituto de Pesquisas Econômicas', 'Fundação Lyndolpho Silva',
+        'Governo do Estado de Goiás', 'Carteira de Identidade Classista', 'Instituto Félix Pacheco', 'Instituto Geral de Perícias',
+        'Inter-institutional Monitoring Group', 'Instituto Médico-Legal', 'Índice de Preços ao Consumidor', 'Instituto Pereira Faustino',
+        'Ministério da Aeronáutica', 'Ministério do Exército', 'Ministério da Marinha', 'Ministério do Trabalho e Emprego',
+        'Ordem dos Advogados do Brasil', 'Ordens dos Músicos do Brasil', 'Polícia Civil do Estado de Minas Gerais', 
+        'Polícia Militar do Estado de Minas Gerais', 'Polícia Federal', 'Polícia Militar', 'Secretaria de Defesa Social (Pernambuco)',
+        'Secretaria Nacional de Justiça / Departamento de Estrangeiros', 'Secretaria de Estado da Casa Civil',
+        'Secretaria de Estado de Justiça e Segurança Pública – Mato Grosso', 'Carteira de Estrangeiro', 'Secretaria de Estado da Segurança Pública do Paraná',
+        'Secretaria da Justiça e Segurança', 'Secretaria da Justiça do Trabalho e Cidadania', 'Secretaria da Justiça do Trabalho e Segurança',
+        'Secretaria de Polícia Técnico-Científica', 'Departamento de Trânsito', 'Cartório Civil ', 'Departamento de Polícia Federal',
+
+    ];
+    
+    protected static $stateAbbr = [
+        'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MT', 'MS',
+        'MG', 'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC',
+        'SP', 'SE', 'TO',
+    ];
+
     /**
      * @example 'Jr.'
      */
@@ -121,6 +167,22 @@ class Person extends \Faker\Provider\Person
     {
         return static::randomElement(static::$suffix);
     }
+
+    public static function emissorRG()
+    {
+        return static::randomElement(static::$emissorRg);
+    }
+    
+    public static function emissorRgAbbr()
+    {
+        return static::randomElement(static::$emissorRgAbbr);
+    }
+
+    public static function corRaca()
+    {
+        return static::randomElement(static::$corRaca);
+    }
+
 
     /**
      * A random CPF number.
