@@ -552,6 +552,18 @@ use Faker\Container\ContainerInterface;
  * @property string $uuid
  *
  * @method string uuid()
+ *
+ * @property string $emissorRg
+ * 
+ * @method string emissorRg()
+ *
+ * @property string emissorRgAbbr
+ * 
+ * @method string emissorRgAbbr()
+ * 
+ * @property string $corRaca
+ * 
+ * @method string corRaca()
  */
 class Generator
 {
